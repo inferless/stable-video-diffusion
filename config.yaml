@@ -1,0 +1,13 @@
+build:
+  cuda_version: "12.1.1"
+  system_packages:
+    - "libssl-dev"
+    - "libx11-6"
+    - "libxext6"
+    - "libgl1-mesa-glx"
+  python_packages:
+    - "accelerate==0.25.0"
+    - "opencv-python==4.8.1.78"
+    - "git+https://github.com/huggingface/diffusers.git@refs/pull/6103/head"
+    - "transformers==4.35.2"
+    - "requests==2.31.0"

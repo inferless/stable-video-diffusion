@@ -1,0 +1,14 @@
+{
+    "outputs": [
+      {
+        "data": [
+          "data"
+        ],
+        "name": "generated_video",
+        "shape": [
+          1
+        ],
+        "datatype": "BYTES"
+      }
+    ]
+}
