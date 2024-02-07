@@ -39,3 +39,4 @@ optional:
   runtime_file_name: config.yaml
 model_url: https://github.com/RajdeepBorgohain/video_gen
 provider: GITHUB
+io_schema: true
