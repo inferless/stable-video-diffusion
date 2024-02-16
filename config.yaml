@@ -6,8 +6,8 @@ build:
     - "libxext6"
     - "libgl1-mesa-glx"
   python_packages:
-    - "accelerate==0.25.0"
-    - "opencv-python==4.8.1.78"
-    - "git+https://github.com/huggingface/diffusers.git@refs/pull/6103/head"
-    - "transformers==4.35.2"
-    - "requests==2.31.0"
+    - "torch==2.2.0"
+    - "opencv-python==4.9.0.80"
+    - "accelerate==0.27.2"
+    - "diffusers==0.26.3"
+    - "transformers==4.37.2"
