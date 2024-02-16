@@ -37,6 +37,6 @@ optional:
   input_file_name: input.json
   output_file_name: output.json
   runtime_file_name: config.yaml
-model_url: https://github.com/RajdeepBorgohain/video_gen
+model_url: https://github.com/inferless/stable-video-diffusion.git
 provider: GITHUB
 io_schema: true
