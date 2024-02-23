@@ -8,7 +8,9 @@ class InferlessPythonModel:
 
     def initialize(self):
         self.pipe = StableVideoDiffusionPipeline.from_pretrained("stabilityai/stable-video-diffusion-img2vid-xt", torch_dtype=torch.float16, variant="fp16")
-        self.pipe.enable_model_cpu_offload()
+        # self.pipe.enable_model_cpu_offload()
+        self.pipe.to("cuda")
+        self.pipe.unet = torch.compile(self.pipe.unet, mode="reduce-overhead", fullgraph=True)
 
     def infer(self,inputs):
         image_url = inputs['image_url']
