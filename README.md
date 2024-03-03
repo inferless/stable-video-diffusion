@@ -1,11 +1,11 @@
 # Tutorial - Deploy Stable Video Diffusion using Inferless
 
-Check out [this tutorial](https://tutorials.inferless.com/deploy-stable-video-diffusion-using-inferless) which will guides you through the process of deploying a CodeLlama-Python-34B GPTQ model using Inferless.
+Check out [this tutorial](https://tutorials.inferless.com/deploy-stable-video-diffusion-using-inferless) which will guides you through the process of deploying a Stable Video Diffusion model using Inferless.
 
 ## TL;DR - Deploy Stable Video Diffusion using Inferless:
 
 - Deployment of stable-video-diffusion-img2vid-xt model using [diffusers](https://github.com/huggingface/diffusers).
-- By using the diffusers, you can expect an average lowest latency of 39 sec which generates 4sec video of 6fps. This setup has an average cold start time of 7 sec.
+- By using the diffusers, you can expect an average lowest latency of 16 sec. This setup has an average cold start time of 7 sec.
 - Dependencies defined in config.yaml.
 - GitHub/GitLab template creation with app.py and config.yaml.
 - Model class in app.py with initialize, infer, and finalize functions.
