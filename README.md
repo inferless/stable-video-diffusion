@@ -10,7 +10,7 @@ Check out [this tutorial](https://tutorials.inferless.com/deploy-stable-video-di
 - GitHub/GitLab template creation with app.py and config.yaml.
 - Model class in app.py with initialize, infer, and finalize functions.
 - Custom runtime creation with necessary system and Python packages.
-- Model import via GitHub with input/output parameters in JSON.
+- Model import via GitHub with input_schema.py.
 - Recommended GPU: NVIDIA A100 for optimal performance.
 - Custom runtime selection in advanced configuration.
 - Final review and deployment on the Inferless platform.
@@ -39,49 +39,11 @@ This will create a copy of the repository in your own GitHub account, allowing y
 ### Import the Model in Inferless
 Log in to your inferless account, select the workspace you want the model to be imported into and click the Add Model button.
 
-Select the PyTorch as framework and choose **Repo(custom code)** as your model source and use the forked repo URL as the **Model URL**.
+Select GitHub as a provider and choose your model repository and the branch.
 
 After the create model step, while setting the configuration for the model make sure to select the appropriate runtime.
 
 Enter all the required details to Import your model. Refer [this link](https://docs.inferless.com/integrations/github-custom-code) for more information on model import.
-
-The following is a sample Input and Output JSON for this model which you can use while importing this model on Inferless.
-
-### Input
-```json
-{
-    "inputs": [
-      {
-        "data": [
-          "https://images.cnbctv18.com/wp-content/uploads/2022/08/ashneer-grover-3-Meme-1-1019x573.jpg"
-        ],
-        "name": "image_url",
-        "shape": [
-          1
-        ],
-        "datatype": "BYTES"
-      }
-    ]
-}
-```
-
-### Output
-```json
-{
-    "outputs": [
-      {
-        "data": [
-          "data"
-        ],
-        "name": "generated_video",
-        "shape": [
-          1
-        ],
-        "datatype": "BYTES"
-      }
-    ]
-}
-```
 
 ---
 ## Curl Command
