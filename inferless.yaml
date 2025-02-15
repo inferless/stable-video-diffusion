@@ -1,6 +1,6 @@
 version: 1.0.0
 
-name: stable-video-diff
+name: stable-video-diffusion
 import_source: GIT
 
 # you can choose the options between ONNX, TENSORFLOW, PYTORCH
