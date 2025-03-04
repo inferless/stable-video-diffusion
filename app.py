@@ -1,3 +1,6 @@
+import os
+os.environ["HF_HUB_ENABLE_HF_TRANSFER"]='1'
+from huggingface_hub import snapshot_download
 from io import BytesIO
 import base64
 import torch
@@ -7,7 +10,9 @@ from diffusers.utils import load_image, export_to_video
 class InferlessPythonModel:
 
     def initialize(self):
-        self.pipe = StableVideoDiffusionPipeline.from_pretrained("stabilityai/stable-video-diffusion-img2vid", torch_dtype=torch.float16, variant="fp16")
+        model_id = "stabilityai/stable-video-diffusion-img2vid"
+        snapshot_download(repo_id=model_id,allow_patterns=["*.safetensors"])
+        self.pipe = StableVideoDiffusionPipeline.from_pretrained(model_id, torch_dtype=torch.float16, variant="fp16")
         # self.pipe.enable_model_cpu_offload()
         self.pipe.to("cuda")
         self.pipe.unet = torch.compile(self.pipe.unet, mode="reduce-overhead", fullgraph=True)
